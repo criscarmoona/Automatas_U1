@@ -1,0 +1,68 @@
+﻿<Page
+    x:Class="AutomatasU1.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AutomatasU1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid Margin="20"
+              HorizontalAlignment="Left"
+              VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <StackPanel x:Name="Tabla"
+                        Grid.Column="1"
+                        Orientation="Horizontal"/>
+            <StackPanel x:Name="transicionesV"
+                        Grid.Column="0"
+                        Orientation="Vertical"/>
+            <Button x:Name="BotonAgregarEstado" 
+                    VerticalAlignment="Top" 
+                    Grid.Column="2"
+                    Content="+"
+                    ToolTipService.Placement="Right"
+                    ToolTipService.ToolTip="Agregar estado"
+                    Click="BotonAgregarEstado_Click"/>
+            <Button x:Name="BotonAgregarTransicion"
+                    VerticalAlignment="Top" 
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Content="+"
+                    ToolTipService.Placement="Bottom"
+                    ToolTipService.ToolTip="Agregar transicion"
+                    Click="BotonAgregarTransicion_Click"/>
+        </Grid>
+
+        <StackPanel Grid.Row="1"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+            <TextBox x:Name="Cadena" Width="300"/>
+            <Button Content="Checar cadena"
+                    Click="ChecarCadenaClic"/>
+        </StackPanel>
+        <Border x:Name="BorderResultado"
+                VerticalAlignment="Center"
+                Grid.Row="2">
+            <TextBlock x:Name="Resultado"
+                       FontSize="50"
+                       TextAlignment="Center"/>
+        </Border>
+    </Grid>
+</Page>
+
